@@ -6,6 +6,8 @@ metadata:
   labels:
     app.kubernetes.io/instance: load-order-profile-api
     app.kubernetes.io/name: load-order-profile-api
+  annotations:
+    argocd.argoproj.io/sync-wave: "5" # Syncs before other resources
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
