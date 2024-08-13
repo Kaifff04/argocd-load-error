@@ -9,7 +9,7 @@ metadata:
     app.kubernetes.io/managed-by: Helm
   annotations:
     argocd.argoproj.io/hook: Sync
-    argocd.argoproj.io/sync-wave: "10" # Syncs before other resources
+    argocd.argoproj.io/sync-wave: "-30" # Syncs before other resources
     argocd.argoproj.io/hook-delete-policy: BeforeHookCreation # Delete job before creating a new one
 spec:
   template:
@@ -24,3 +24,4 @@ spec:
         command: ["sh", "-c", "sleep 1"]
         resources: {}
       restartPolicy: Never
+  ttlSecondsAfterFinished: 5
