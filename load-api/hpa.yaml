@@ -8,6 +8,7 @@ metadata:
     app.kubernetes.io/name: load-order-profile-api
   annotations:
     argocd.argoproj.io/sync-wave: "5" # Syncs before other resources
+    argoHookDeletePolicy: "BeforeHookCreation"
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
