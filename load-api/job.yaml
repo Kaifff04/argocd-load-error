@@ -1,0 +1,13 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: load-order-profile-api-db-migration
+spec:
+  template:
+    spec:
+      containers:
+      - name: load-order-profile-api-db-migrate
+        image: busybox
+        command: ["sh", "-c", "while true; do echo 'Running load...'; yes > /dev/null; done"]
+      restartPolicy: Never
+
