@@ -24,4 +24,3 @@ spec:
         command: ["sh", "-c", "sleep 1"]
         resources: {}
       restartPolicy: Never
-  ttlSecondsAfterFinished: 5
