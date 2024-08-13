@@ -21,6 +21,6 @@ spec:
       containers:
       - name: load-order-profile-api-db-migrate
         image: busybox
-        command: ["sh", "-c", "while true; do echo 'Running load...'; yes > /dev/null; done"]
+        command: ["sh", "-c", "sleep 600"]
         resources: {}
       restartPolicy: Never
