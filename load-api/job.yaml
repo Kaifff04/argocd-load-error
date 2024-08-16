@@ -17,7 +17,6 @@ spec:
       labels:
         app.kubernetes.io/name: load-order-profile-api
         app.kubernetes.io/instance: load-order-profile-api
-        app.kubernetes.io/component: job.yaml
     spec:
       containers:
       - name: load-order-profile-api-db-migrate
