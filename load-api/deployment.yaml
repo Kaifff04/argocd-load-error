@@ -21,7 +21,7 @@ spec:
       containers:
       - name: nginx
         image: nginx:latest
-        command: ["sh", "-c", "sleep 5"]
+        command: ["sh", "-c", "sleep 400"]
         ports:
         - containerPort: 80
         resources:
