@@ -1,26 +1,26 @@
-apiVersion: autoscaling/v2
-kind: HorizontalPodAutoscaler
-metadata:
-  name: load-order-profile-api
-  namespace: myapp
-  labels:
-    app.kubernetes.io/instance: load-order-profile-api
-    app.kubernetes.io/name: load-order-profile-api
-  annotations:
-    argocd.argoproj.io/sync-wave: "5" # Syncs before other resources
-    argocd.argoproj.io/hook: Sync
-    argocd.argoproj.io/hook-delete-policy: "BeforeHookCreation"
-spec:
-  scaleTargetRef:
-    apiVersion: apps/v1
-    kind: Deployment
-    name: load-order-profile-api
-  minReplicas: 2
-  maxReplicas: 15
-  metrics:
-  - type: Resource
-    resource:
-      name: cpu
-      target:
-        type: Utilization
-        averageUtilization: 75
+# apiVersion: autoscaling/v2
+# kind: HorizontalPodAutoscaler
+# metadata:
+#   name: load-order-profile-api
+#   namespace: myapp
+#   labels:
+#     app.kubernetes.io/instance: load-order-profile-api
+#     app.kubernetes.io/name: load-order-profile-api
+#   annotations:
+#     argocd.argoproj.io/sync-wave: "5" # Syncs before other resources
+#     argocd.argoproj.io/hook: Sync
+#     argocd.argoproj.io/hook-delete-policy: "BeforeHookCreation"
+# spec:
+#   scaleTargetRef:
+#     apiVersion: apps/v1
+#     kind: Deployment
+#     name: load-order-profile-api
+#   minReplicas: 2
+#   maxReplicas: 15
+#   metrics:
+#   - type: Resource
+#     resource:
+#       name: cpu
+#       target:
+#         type: Utilization
+#         averageUtilization: 75
